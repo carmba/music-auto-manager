@@ -583,7 +583,7 @@ class DownloadEngine:
                 return
             raise
 
-        downloaded = self._find_downloaded_file(artist_dir, raw_title, safe_track)
+        downloaded = self._find_downloaded_file(artist_dir, raw_title, safe_track, output_dir)
 
         if downloaded and downloaded.exists():
             if downloaded.suffix.lower() != ".mp3":
@@ -616,7 +616,10 @@ class DownloadEngine:
             item.status = DownloadStatus.ERROR
             item.error_msg = "Arquivo não encontrado após download"
             self.db.mark_error(item.db_id, item.error_msg)
-            self._log(f"[ERRO] {raw_title} — arquivo não encontrado após download")
+            self._log(
+                f"[ERRO] {raw_title} — arquivo não encontrado após download "
+                f"(pasta esperada: {artist_dir})"
+            )
 
         self._notify(item)
 
@@ -679,64 +682,70 @@ class DownloadEngine:
 
         return fallback_url
 
-    def _find_downloaded_file(self, artist_dir: Path, raw_title: str, safe_track: str) -> Optional[Path]:
-        """Tenta localizar o arquivo MP3 recém-baixado na pasta do artista."""
-        # Tentar nome exato sanitizado primeiro
-        candidate = artist_dir / f"{safe_track}.mp3"
-        if candidate.exists():
-            return candidate
-
-        # Tentar pelo título original sanitizado
+    def _find_downloaded_file(
+        self,
+        artist_dir: Path,
+        raw_title: str,
+        safe_track: str,
+        output_dir: Optional[Path] = None,
+    ) -> Optional[Path]:
+        """Localiza o arquivo de áudio recém-baixado (mp3 ou formato bruto)."""
         raw_safe = sanitize_filename(raw_title)
-        candidate2 = artist_dir / f"{raw_safe}.mp3"
-        if candidate2.exists():
-            return candidate2
-
-        # Buscar qualquer .mp3 criado recentemente (últimos 60s)
         now = time.time()
-        for f in artist_dir.glob("*.mp3"):
-            if now - f.stat().st_mtime < 60:
+        audio_exts = {".mp3", ".m4a", ".webm", ".ogg", ".opus", ".aac", ".wav", ".flac", ".mp4"}
+        temp_exts = {".part", ".ytdl", ".tmp", ".temp"}
+
+        def is_audio_file(path: Path) -> bool:
+            suffixes = {s.lower() for s in path.suffixes}
+            if suffixes & temp_exts:
+                return False
+            return bool(suffixes & audio_exts)
+
+        def collect_audio_files(base_dir: Path, recursive: bool = False) -> list[Path]:
+            if not base_dir.exists() or not base_dir.is_dir():
+                return []
+            iterator = base_dir.rglob("*") if recursive else base_dir.glob("*")
+            files: list[Path] = []
+            for p in iterator:
+                if p.is_file() and is_audio_file(p):
+                    files.append(p)
+            return files
+
+        # 1) Casos mais previsíveis
+        for name in (f"{safe_track}.mp3", f"{raw_safe}.mp3"):
+            candidate = artist_dir / name
+            if candidate.exists():
+                return candidate
+
+        # 2) Buscar arquivos de áudio na pasta do artista (incluindo subpastas).
+        audio_files = collect_audio_files(artist_dir, recursive=True)
+
+        # 3) Fallback: buscar no diretório raiz de saída por arquivo recente.
+        if not audio_files and output_dir and output_dir.exists():
+            output_candidates = collect_audio_files(output_dir, recursive=True)
+            recent_candidates = [f for f in output_candidates if (now - f.stat().st_mtime) <= 300]
+            audio_files.extend(recent_candidates)
+
+        if not audio_files and output_dir and output_dir.exists():
+            # Último fallback: qualquer áudio no output_dir, priorizando por nome.
+            audio_files.extend(collect_audio_files(output_dir, recursive=True))
+
+        if not audio_files:
+            return None
+
+        audio_files.sort(key=lambda f: f.stat().st_mtime, reverse=True)
+
+        # 4) Tentar casar por nome esperado entre os arquivos mais recentes.
+        safe_lower = safe_track.lower()
+        raw_lower = raw_safe.lower()
+        for f in audio_files:
+            name_lower = f.name.lower()
+            stem = f.stem.lower()
+            if safe_lower in stem or raw_lower in stem or safe_lower in name_lower or raw_lower in name_lower:
                 return f
 
-        return None
-        # Tentar nome exato sanitizado primeiro (caso padrão com o novo template)
-        candidate = artist_dir / f"{safe_track}.mp3"
-        if candidate.exists():
-            return candidate
-
-        # Tentar pelo título original sanitizado (fallback para títulos alterados pelo yt-dlp)
-        raw_safe = sanitize_filename(raw_title)
-        candidate2 = artist_dir / f"{raw_safe}.mp3"
-        if candidate2.exists():
-            return candidate2
-
-        # Buscar qualquer .mp3 criado recentemente (últimos 5 minutos)
-        now = time.time()
-        recent = None
-        for f in artist_dir.glob("*.mp3"):
-            age = now - f.stat().st_mtime
-            if age < 300:
-                if recent is None or f.stat().st_mtime > recent.stat().st_mtime:
-                    recent = f
-        if recent:
-            return recent
-
-        # Último recurso: qualquer arquivo de áudio na pasta (sem limite de tempo)
-        for ext in (
-            "*.mp3",
-            "*.m4a",
-            "*.webm",
-            "*.ogg",
-            "*.opus",
-            "*.aac",
-            "*.wav",
-            "*.flac",
-            "*.mp4",
-        ):
-            for f in artist_dir.glob(ext):
-                return f
-
-        return None
+        # 5) Fallback: arquivo de áudio mais recente.
+        return audio_files[0]
 
     def _convert_to_mp3(self, source_file: Path, output_file: Path, quality: str):
         """Converte o arquivo baixado para MP3 usando ffmpeg diretamente."""
