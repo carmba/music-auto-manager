@@ -559,8 +559,27 @@ class DownloadEngine:
         )
         ydl_opts_entry["outtmpl"] = output_template
 
+        # Para streams HLS/m3u8, forçar downloader ffmpeg melhora estabilidade.
+        if self._is_hls_entry(entry):
+            ydl_opts_entry["hls_prefer_native"] = False
+            ydl_opts_entry["external_downloader"] = "ffmpeg"
+            self._log(f"[INFO] HLS/m3u8 detectado para '{raw_title}'. Usando ffmpeg downloader.")
+
         item.status = DownloadStatus.DOWNLOADING
         self._notify(item)
+
+    @staticmethod
+    def _is_hls_entry(entry: dict) -> bool:
+        """Retorna True para entradas HLS/m3u8."""
+        protocol = str(entry.get("protocol") or "").lower()
+        manifest = str(entry.get("manifest_url") or "").lower()
+        url = str(entry.get("url") or "").lower()
+        webpage = str(entry.get("webpage_url") or "").lower()
+
+        markers = ("m3u8", "hls")
+        return any(m in protocol for m in markers) or any(
+            m in source for source in (manifest, url, webpage) for m in markers
+        )
 
         target_url = self._entry_download_url(entry, item.url)
         try:
@@ -778,10 +797,6 @@ class DownloadEngine:
             "fragment_retries": 3,
             "socket_timeout": 30,
             "extract_flat": "in_playlist" if extract_flat else False,
-            # Streams HLS/m3u8 funcionam melhor via ffmpeg; evita erros do tipo
-            # "m3u download detected" quando o downloader nativo entra em ação.
-            "hls_prefer_native": False,
-            "external_downloader": "ffmpeg",
         }
 
         if ffmpeg_loc:
