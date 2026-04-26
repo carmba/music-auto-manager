@@ -1,0 +1,12 @@
+{
+  "output_folder": "/Users/trjesse/Musicas",
+  "quality": "128",
+  "theme": "dark",
+  "download_thumbnail": false,
+  "auto_start": true,
+  "language": "es",
+  "max_concurrent": 10,
+  "use_hash_check": true,
+  "update_manifest_url": "",
+  "auto_check_updates": true
+}

@@ -1,0 +1,256 @@
+2026-04-25 10:58:41 | INFO     | ============================================================
+2026-04-25 10:58:41 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 10:58:41 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 10:58:41 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 10:58:41 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 10:58:41 | INFO     | FFmpeg não encontrado. Iniciando download automático...
+2026-04-25 10:58:41 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 10:58:41 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 10:58:41 | INFO     | AVISO: FFmpeg não disponível — conversão MP3 pode falhar.
+2026-04-25 10:59:30 | INFO     | ============================================================
+2026-04-25 10:59:30 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 10:59:30 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 10:59:30 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 10:59:30 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 10:59:30 | INFO     | FFmpeg não encontrado. Iniciando download automático...
+2026-04-25 10:59:30 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 10:59:30 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 10:59:30 | INFO     | AVISO: FFmpeg não disponível — conversão MP3 pode falhar.
+2026-04-25 11:01:02 | INFO     | [ERRO] https://www.youtube.com/watch?v=Gj8yLWnrwLI&list=PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe — Não foi possível obter informações do vídeo.
+2026-04-25 11:01:02 | INFO     | [ERRO] https://www.youtube.com/watch?v=Gj8yLWnrwLI&list=PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe — Não foi possível obter informações do vídeo.
+2026-04-25 11:01:55 | INFO     | [ERRO] https://www.youtube.com/watch?v=kqMY-xy2B-A — Não foi possível obter informações do vídeo.
+2026-04-25 11:01:55 | INFO     | [ERRO] https://www.youtube.com/watch?v=kqMY-xy2B-A — Não foi possível obter informações do vídeo.
+2026-04-25 11:03:04 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 11:14:31 | INFO     | ============================================================
+2026-04-25 11:14:31 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 11:14:31 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 11:14:31 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 11:14:31 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 11:14:32 | INFO     | FFmpeg não encontrado. Iniciando download automático...
+2026-04-25 11:14:32 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 11:14:32 | INFO     | No macOS, instale o FFmpeg via: brew install ffmpeg
+2026-04-25 11:14:32 | INFO     | AVISO: FFmpeg não disponível — conversão MP3 pode falhar.
+2026-04-25 11:14:54 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 11:14:54 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 11:14:55 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 11:14:55 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 11:14:57 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 11:14:57 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 11:51:42 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:24:05 | INFO     | ============================================================
+2026-04-25 13:24:05 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:24:05 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:24:05 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:24:05 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:24:05 | INFO     | FFmpeg: ffmpeg
+2026-04-25 13:24:22 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:24:22 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:24:23 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:24:23 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:24:25 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 13:24:25 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 13:29:21 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:29:29 | INFO     | ============================================================
+2026-04-25 13:29:29 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:29:29 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:29:29 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:29:29 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:29:29 | INFO     | FFmpeg: ffmpeg
+2026-04-25 13:29:43 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:29:43 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:29:45 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:29:45 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:29:47 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 13:29:47 | INFO     | [ERRO] Falha em item da playlist: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-04-25 13:30:49 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:30:58 | INFO     | ============================================================
+2026-04-25 13:30:58 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:30:58 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:30:58 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:30:58 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:30:58 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-25 13:31:08 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:31:08 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:31:10 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:31:10 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:31:16 | INFO     | [ERRO] Alex Zurdo x @FunkyPR  - Pa'lo (Video Oficial) — arquivo não encontrado após download
+2026-04-25 13:31:16 | INFO     | [ERRO] Alex Zurdo x @FunkyPR  - Pa'lo (Video Oficial) — arquivo não encontrado após download
+2026-04-25 13:32:47 | WARNING  | Histórico de downloads apagado.
+2026-04-25 13:37:57 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:38:09 | INFO     | ============================================================
+2026-04-25 13:38:09 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:38:09 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:38:09 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:38:09 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:38:09 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-25 13:38:21 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:38:21 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:38:22 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:38:22 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:38:29 | INFO     | [OK] Alex Zurdo x @FunkyPR - Pa'lo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo x @FunkyPR/Pa'lo (Video Oficial).mp3
+2026-04-25 13:38:29 | INFO     | [OK] Alex Zurdo x @FunkyPR - Pa'lo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo x @FunkyPR/Pa'lo (Video Oficial).mp3
+2026-04-25 13:39:07 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:39:07 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:39:21 | WARNING  | Histórico de downloads apagado.
+2026-04-25 13:39:27 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:39:27 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:39:27 | INFO     | Playlist detectada: PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe (13 vídeos)
+2026-04-25 13:39:27 | INFO     | Playlist detectada: PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe (13 vídeos)
+2026-04-25 13:39:34 | INFO     | [OK] Alex Zurdo, Gabriel EMC - Lo Menos - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/Lo Menos - Visualizer Oficial Dual.mp3
+2026-04-25 13:39:34 | INFO     | [OK] Alex Zurdo, Gabriel EMC - Lo Menos - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/Lo Menos - Visualizer Oficial Dual.mp3
+2026-04-25 13:39:42 | INFO     | [OK] Alex Zurdo, Gabriel EMC - Relevo (Salsa) - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/Relevo (Salsa) - Visualizer Oficial Dual.mp3
+2026-04-25 13:39:42 | INFO     | [OK] Alex Zurdo, Gabriel EMC - Relevo (Salsa) - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/Relevo (Salsa) - Visualizer Oficial Dual.mp3
+2026-04-25 13:39:49 | INFO     | [OK] Alex Zurdo X Gabriel EMC - Algoritmo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo X Gabriel EMC/Algoritmo (Video Oficial).mp3
+2026-04-25 13:39:49 | INFO     | [OK] Alex Zurdo X Gabriel EMC - Algoritmo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo X Gabriel EMC/Algoritmo (Video Oficial).mp3
+2026-04-25 13:39:57 | INFO     | [OK] Desconhecido - Alex Zurdo salvo em /Users/trjesse/Musicas/Desconhecido/Alex Zurdo.mp3
+2026-04-25 13:39:57 | INFO     | [OK] Desconhecido - Alex Zurdo salvo em /Users/trjesse/Musicas/Desconhecido/Alex Zurdo.mp3
+2026-04-25 13:40:04 | INFO     | [OK] Gabriel EMC X Alex Zurdo - Si Tu No Estas (Video Oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC X Alex Zurdo/Si Tu No Estas (Video Oficial).mp3
+2026-04-25 13:40:04 | INFO     | [OK] Gabriel EMC X Alex Zurdo - Si Tu No Estas (Video Oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC X Alex Zurdo/Si Tu No Estas (Video Oficial).mp3
+2026-04-25 13:40:13 | INFO     | [OK] Gabriel EMC & Alex Zurdo - Intentemos algo (Remix) salvo em /Users/trjesse/Musicas/Gabriel EMC & Alex Zurdo/Intentemos algo (Remix).mp3
+2026-04-25 13:40:13 | INFO     | [OK] Gabriel EMC & Alex Zurdo - Intentemos algo (Remix) salvo em /Users/trjesse/Musicas/Gabriel EMC & Alex Zurdo/Intentemos algo (Remix).mp3
+2026-04-25 13:40:21 | INFO     | [OK] Alex Zurdo - En Hora Buena (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/En Hora Buena (Video Oficial).mp3
+2026-04-25 13:40:21 | INFO     | [OK] Alex Zurdo - En Hora Buena (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/En Hora Buena (Video Oficial).mp3
+2026-04-25 13:40:27 | INFO     | [OK] Gabriel EMC - Guíame (Video oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Guíame (Video oficial).mp3
+2026-04-25 13:40:27 | INFO     | [OK] Gabriel EMC - Guíame (Video oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Guíame (Video oficial).mp3
+2026-04-25 13:40:33 | INFO     | [OK] Gabriel EMC - Bendito Amor (Video Oficial) Efecto EMC salvo em /Users/trjesse/Musicas/Gabriel EMC/Bendito Amor (Video Oficial) Efecto EMC.mp3
+2026-04-25 13:40:33 | INFO     | [OK] Gabriel EMC - Bendito Amor (Video Oficial) Efecto EMC salvo em /Users/trjesse/Musicas/Gabriel EMC/Bendito Amor (Video Oficial) Efecto EMC.mp3
+2026-04-25 13:40:40 | INFO     | [OK] Alex Zurdo,Gabriel EMC - Relevo Con Orquesta en Vivo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo,Gabriel EMC/Relevo Con Orquesta en Vivo (Video Oficial).mp3
+2026-04-25 13:40:40 | INFO     | [OK] Alex Zurdo,Gabriel EMC - Relevo Con Orquesta en Vivo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo,Gabriel EMC/Relevo Con Orquesta en Vivo (Video Oficial).mp3
+2026-04-25 13:40:48 | INFO     | [OK] Alex Zurdo, Gabriel EMC - ÉL ME AMA - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/ÉL ME AMA - Visualizer Oficial Dual.mp3
+2026-04-25 13:40:48 | INFO     | [OK] Alex Zurdo, Gabriel EMC - ÉL ME AMA - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/ÉL ME AMA - Visualizer Oficial Dual.mp3
+2026-04-25 13:40:56 | INFO     | [OK] Alex Zurdo, Gabriel EMC - DEJAME UN RATO - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/DEJAME UN RATO - Visualizer Oficial Dual.mp3
+2026-04-25 13:40:56 | INFO     | [OK] Alex Zurdo, Gabriel EMC - DEJAME UN RATO - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/DEJAME UN RATO - Visualizer Oficial Dual.mp3
+2026-04-25 13:41:02 | INFO     | [OK] Alex Zurdo, Gabriel EMC - IDENTIDAD - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/IDENTIDAD - Visualizer Oficial Dual.mp3
+2026-04-25 13:41:02 | INFO     | [OK] Alex Zurdo, Gabriel EMC - IDENTIDAD - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo, Gabriel EMC/IDENTIDAD - Visualizer Oficial Dual.mp3
+2026-04-25 13:44:34 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:45:16 | INFO     | ============================================================
+2026-04-25 13:45:16 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:45:16 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:45:16 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:45:16 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:45:16 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-25 13:45:43 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:45:43 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:46:02 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:46:02 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:46:02 | INFO     | Playlist detectada: PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe (13 vídeos)
+2026-04-25 13:46:02 | INFO     | Playlist detectada: PLe0mKXL7UeAjiyqPMY1_iVvRU3RsRnPKe (13 vídeos)
+2026-04-25 13:46:08 | INFO     | [OK] Alex Zurdo - Lo Menos - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/Lo Menos - Visualizer Oficial Dual.mp3
+2026-04-25 13:46:08 | INFO     | [OK] Alex Zurdo - Lo Menos - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/Lo Menos - Visualizer Oficial Dual.mp3
+2026-04-25 13:46:16 | INFO     | [OK] Alex Zurdo - Relevo (Salsa) - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/Relevo (Salsa) - Visualizer Oficial Dual.mp3
+2026-04-25 13:46:16 | INFO     | [OK] Alex Zurdo - Relevo (Salsa) - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/Relevo (Salsa) - Visualizer Oficial Dual.mp3
+2026-04-25 13:46:22 | INFO     | [OK] Alex Zurdo - Algoritmo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Algoritmo (Video Oficial).mp3
+2026-04-25 13:46:22 | INFO     | [OK] Alex Zurdo - Algoritmo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Algoritmo (Video Oficial).mp3
+2026-04-25 13:46:30 | INFO     | [OK] Desconhecido - Alex Zurdo salvo em /Users/trjesse/Musicas/Desconhecido/Alex Zurdo.mp3
+2026-04-25 13:46:30 | INFO     | [OK] Desconhecido - Alex Zurdo salvo em /Users/trjesse/Musicas/Desconhecido/Alex Zurdo.mp3
+2026-04-25 13:46:37 | INFO     | [OK] Gabriel EMC - Si Tu No Estas (Video Oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Si Tu No Estas (Video Oficial).mp3
+2026-04-25 13:46:37 | INFO     | [OK] Gabriel EMC - Si Tu No Estas (Video Oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Si Tu No Estas (Video Oficial).mp3
+2026-04-25 13:46:45 | INFO     | [OK] Gabriel EMC - Intentemos algo (Remix) salvo em /Users/trjesse/Musicas/Gabriel EMC/Intentemos algo (Remix).mp3
+2026-04-25 13:46:45 | INFO     | [OK] Gabriel EMC - Intentemos algo (Remix) salvo em /Users/trjesse/Musicas/Gabriel EMC/Intentemos algo (Remix).mp3
+2026-04-25 13:46:52 | INFO     | [OK] Alex Zurdo - En Hora Buena (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/En Hora Buena (Video Oficial).mp3
+2026-04-25 13:46:52 | INFO     | [OK] Alex Zurdo - En Hora Buena (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/En Hora Buena (Video Oficial).mp3
+2026-04-25 13:46:58 | INFO     | [OK] Gabriel EMC - Guíame (Video oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Guíame (Video oficial).mp3
+2026-04-25 13:46:58 | INFO     | [OK] Gabriel EMC - Guíame (Video oficial) salvo em /Users/trjesse/Musicas/Gabriel EMC/Guíame (Video oficial).mp3
+2026-04-25 13:47:06 | INFO     | [OK] Gabriel EMC - Bendito Amor (Video Oficial) Efecto EMC salvo em /Users/trjesse/Musicas/Gabriel EMC/Bendito Amor (Video Oficial) Efecto EMC.mp3
+2026-04-25 13:47:06 | INFO     | [OK] Gabriel EMC - Bendito Amor (Video Oficial) Efecto EMC salvo em /Users/trjesse/Musicas/Gabriel EMC/Bendito Amor (Video Oficial) Efecto EMC.mp3
+2026-04-25 13:47:13 | INFO     | [OK] Alex Zurdo - Relevo Con Orquesta en Vivo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Relevo Con Orquesta en Vivo (Video Oficial).mp3
+2026-04-25 13:47:13 | INFO     | [OK] Alex Zurdo - Relevo Con Orquesta en Vivo (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Relevo Con Orquesta en Vivo (Video Oficial).mp3
+2026-04-25 13:47:20 | INFO     | [OK] Alex Zurdo - ÉL ME AMA - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/ÉL ME AMA - Visualizer Oficial Dual.mp3
+2026-04-25 13:47:20 | INFO     | [OK] Alex Zurdo - ÉL ME AMA - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/ÉL ME AMA - Visualizer Oficial Dual.mp3
+2026-04-25 13:47:26 | INFO     | [OK] Alex Zurdo - DEJAME UN RATO - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/DEJAME UN RATO - Visualizer Oficial Dual.mp3
+2026-04-25 13:47:26 | INFO     | [OK] Alex Zurdo - DEJAME UN RATO - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/DEJAME UN RATO - Visualizer Oficial Dual.mp3
+2026-04-25 13:47:32 | INFO     | [OK] Alex Zurdo - IDENTIDAD - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/IDENTIDAD - Visualizer Oficial Dual.mp3
+2026-04-25 13:47:32 | INFO     | [OK] Alex Zurdo - IDENTIDAD - Visualizer Oficial Dual salvo em /Users/trjesse/Musicas/Alex Zurdo/IDENTIDAD - Visualizer Oficial Dual.mp3
+2026-04-25 13:48:24 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:48:24 | INFO     | Erro SSL detectado. Tentando modo compatibilidade de certificado...
+2026-04-25 13:48:28 | INFO     | [ERRO] https://www.youtube.com/watch?v=GhIiNdD4TG8&list=PLe0mKXL7UeAjudg2HKf44L6hoM849jfiM — [0;31mERROR:[0m [youtube] fWaOnZapnig: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+2026-04-25 13:48:28 | INFO     | [ERRO] https://www.youtube.com/watch?v=GhIiNdD4TG8&list=PLe0mKXL7UeAjudg2HKf44L6hoM849jfiM — [0;31mERROR:[0m [youtube] fWaOnZapnig: Private video. Sign in if you've been granted access to this video. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+2026-04-25 13:49:09 | WARNING  | Histórico de downloads apagado.
+2026-04-25 13:49:14 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:52:56 | INFO     | ============================================================
+2026-04-25 13:52:56 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:52:56 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:52:56 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:52:56 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:52:57 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-25 13:53:06 | INFO     | [ERRO] https://www.youtube.com/watch?v=HXCi8SheuQM&list=PLe0mKXL7UeAhVqSayHBNSb4hRviGf5U1W — Não foi possível obter informações do vídeo.
+2026-04-25 13:53:06 | INFO     | [ERRO] https://www.youtube.com/watch?v=HXCi8SheuQM&list=PLe0mKXL7UeAhVqSayHBNSb4hRviGf5U1W — Não foi possível obter informações do vídeo.
+2026-04-25 13:53:59 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 13:54:24 | INFO     | ============================================================
+2026-04-25 13:54:24 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 13:54:24 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 13:54:24 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 13:54:24 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 13:54:24 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-25 13:54:51 | INFO     | Nenhum metadado retornado. Tentando modo compatibilidade SSL...
+2026-04-25 13:54:51 | INFO     | Nenhum metadado retornado. Tentando modo compatibilidade SSL...
+2026-04-25 13:54:53 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:54:53 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:55:48 | INFO     | Nenhum metadado retornado. Tentando modo compatibilidade SSL...
+2026-04-25 13:55:48 | INFO     | Nenhum metadado retornado. Tentando modo compatibilidade SSL...
+2026-04-25 13:55:50 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:55:50 | INFO     | Modo compatibilidade SSL ativo para este download.
+2026-04-25 13:55:50 | INFO     | Playlist detectada: PLe0mKXL7UeAhVqSayHBNSb4hRviGf5U1W (18 vídeos)
+2026-04-25 13:55:50 | INFO     | Playlist detectada: PLe0mKXL7UeAhVqSayHBNSb4hRviGf5U1W (18 vídeos)
+2026-04-25 13:55:50 | INFO     | [SKIP] Alex Zurdo - CONXSION (Álbum completo) — arquivo já existe.
+2026-04-25 13:55:50 | INFO     | [SKIP] Alex Zurdo - CONXSION (Álbum completo) — arquivo já existe.
+2026-04-25 13:55:58 | INFO     | [OK] Alex Zurdo - CONXSIÓN (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/CONXSIÓN (Motion Video).mp3
+2026-04-25 13:55:58 | INFO     | [OK] Alex Zurdo - CONXSIÓN (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/CONXSIÓN (Motion Video).mp3
+2026-04-25 13:56:06 | INFO     | [OK] Alex Zurdo - Fluye (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Fluye (Motion Video).mp3
+2026-04-25 13:56:06 | INFO     | [OK] Alex Zurdo - Fluye (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Fluye (Motion Video).mp3
+2026-04-25 13:56:06 | INFO     | [SKIP] Alex Zurdo Feat GabrielEMC - Lo Que Se Va (Motion Video) — arquivo já existe.
+2026-04-25 13:56:06 | INFO     | [SKIP] Alex Zurdo Feat GabrielEMC - Lo Que Se Va (Motion Video) — arquivo já existe.
+2026-04-25 13:56:14 | INFO     | [OK] Alex Zurdo - Guarda Tu Corazón (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Guarda Tu Corazón (Motion Video).mp3
+2026-04-25 13:56:14 | INFO     | [OK] Alex Zurdo - Guarda Tu Corazón (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Guarda Tu Corazón (Motion Video).mp3
+2026-04-25 13:56:22 | INFO     | [OK] Alex Zurdo - A Mi Favor (Motion VIdeo) salvo em /Users/trjesse/Musicas/Alex Zurdo/A Mi Favor (Motion VIdeo).mp3
+2026-04-25 13:56:22 | INFO     | [OK] Alex Zurdo - A Mi Favor (Motion VIdeo) salvo em /Users/trjesse/Musicas/Alex Zurdo/A Mi Favor (Motion VIdeo).mp3
+2026-04-25 13:56:22 | INFO     | [SKIP] Alex Zurdo feat Indiomar - Bienvenido a Bordo (Motion Video) — arquivo já existe.
+2026-04-25 13:56:22 | INFO     | [SKIP] Alex Zurdo feat Indiomar - Bienvenido a Bordo (Motion Video) — arquivo já existe.
+2026-04-25 13:56:23 | INFO     | [OK] Alex Zurdo - CONXSION (Álbum completo) salvo em /Users/trjesse/Musicas/Alex Zurdo/CONXSION (Álbum completo).mp3
+2026-04-25 13:56:23 | INFO     | [OK] Alex Zurdo - CONXSION (Álbum completo) salvo em /Users/trjesse/Musicas/Alex Zurdo/CONXSION (Álbum completo).mp3
+2026-04-25 13:56:30 | INFO     | [OK] Alex Zurdo - Sálvame De Mi (Motion VIdeo) salvo em /Users/trjesse/Musicas/Alex Zurdo/Sálvame De Mi (Motion VIdeo).mp3
+2026-04-25 13:56:30 | INFO     | [OK] Alex Zurdo - Sálvame De Mi (Motion VIdeo) salvo em /Users/trjesse/Musicas/Alex Zurdo/Sálvame De Mi (Motion VIdeo).mp3
+2026-04-25 13:56:38 | INFO     | [OK] Alex Zurdo - No Falla - salvo em /Users/trjesse/Musicas/Alex Zurdo/No Falla -.mp3
+2026-04-25 13:56:38 | INFO     | [OK] Alex Zurdo - No Falla - salvo em /Users/trjesse/Musicas/Alex Zurdo/No Falla -.mp3
+2026-04-25 13:56:46 | INFO     | [OK] Alex Zurdo - La Vuelta - salvo em /Users/trjesse/Musicas/Alex Zurdo/La Vuelta -.mp3
+2026-04-25 13:56:46 | INFO     | [OK] Alex Zurdo - La Vuelta - salvo em /Users/trjesse/Musicas/Alex Zurdo/La Vuelta -.mp3
+2026-04-25 13:56:54 | INFO     | [OK] Alex Zurdo - No Veo Pero Creo (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/No Veo Pero Creo (Motion Video).mp3
+2026-04-25 13:56:54 | INFO     | [OK] Alex Zurdo - No Veo Pero Creo (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/No Veo Pero Creo (Motion Video).mp3
+2026-04-25 13:57:03 | INFO     | [OK] Alex Zurdo - Ya Gané - salvo em /Users/trjesse/Musicas/Alex Zurdo/Ya Gané -.mp3
+2026-04-25 13:57:03 | INFO     | [OK] Alex Zurdo - Ya Gané - salvo em /Users/trjesse/Musicas/Alex Zurdo/Ya Gané -.mp3
+2026-04-25 13:57:13 | INFO     | [OK] Alex Zurdo - Viral - salvo em /Users/trjesse/Musicas/Alex Zurdo/Viral -.mp3
+2026-04-25 13:57:13 | INFO     | [OK] Alex Zurdo - Viral - salvo em /Users/trjesse/Musicas/Alex Zurdo/Viral -.mp3
+2026-04-25 13:57:21 | INFO     | [OK] Alex Zurdo - Porto Su Luz (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Porto Su Luz (Motion Video).mp3
+2026-04-25 13:57:21 | INFO     | [OK] Alex Zurdo - Porto Su Luz (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Porto Su Luz (Motion Video).mp3
+2026-04-25 13:57:29 | INFO     | [OK] Alex Zurdo - Tiempo (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Tiempo (Motion Video).mp3
+2026-04-25 13:57:29 | INFO     | [OK] Alex Zurdo - Tiempo (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Tiempo (Motion Video).mp3
+2026-04-25 13:57:37 | INFO     | [OK] Alex Zurdo - Gracias (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Gracias (Motion Video).mp3
+2026-04-25 13:57:37 | INFO     | [OK] Alex Zurdo - Gracias (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Gracias (Motion Video).mp3
+2026-04-25 13:57:38 | WARNING  | Histórico de downloads apagado.
+2026-04-25 13:57:48 | INFO     | [OK] Alex Zurdo - Quédate (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Quédate (Motion Video).mp3
+2026-04-25 13:57:48 | INFO     | [OK] Alex Zurdo - Quédate (Motion Video) salvo em /Users/trjesse/Musicas/Alex Zurdo/Quédate (Motion Video).mp3
+2026-04-25 13:57:55 | INFO     | [OK] Alex Zurdo - Fluye (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Fluye (Video Oficial).mp3
+2026-04-25 13:57:55 | INFO     | [OK] Alex Zurdo - Fluye (Video Oficial) salvo em /Users/trjesse/Musicas/Alex Zurdo/Fluye (Video Oficial).mp3
+2026-04-25 14:03:11 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-25 14:03:17 | INFO     | ============================================================
+2026-04-25 14:03:17 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-25 14:03:17 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-25 14:03:17 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-25 14:03:17 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-25 14:03:17 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-26 11:47:13 | INFO     | ============================================================
+2026-04-26 11:47:13 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-26 11:47:13 | INFO     | Versão app: 1.0.0
+2026-04-26 11:47:13 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-26 11:47:13 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-26 11:47:13 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-26 11:47:13 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-26 11:47:40 | INFO     | MUSIC AUTO MANAGER — encerrado
+2026-04-26 11:51:12 | INFO     | ============================================================
+2026-04-26 11:51:12 | INFO     | MUSIC AUTO MANAGER — iniciando
+2026-04-26 11:51:12 | INFO     | Versão app: 1.0.0
+2026-04-26 11:51:12 | INFO     | Versão Python: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+2026-04-26 11:51:12 | INFO     | Diretório app: /Applications/XAMPP/xamppfiles/htdocs/musica/music_auto_manager
+2026-04-26 11:51:12 | INFO     | Banco de dados inicializado: music_manager.db
+2026-04-26 11:51:12 | INFO     | FFmpeg: /usr/local/bin/ffmpeg
+2026-04-26 11:53:33 | INFO     | MUSIC AUTO MANAGER — encerrado

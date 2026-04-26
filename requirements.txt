@@ -1,0 +1,8 @@
+# requirements.txt — Music Auto Manager
+# Instalar com: pip install -r requirements.txt
+
+customtkinter>=5.2.2
+yt-dlp>=2024.3.10
+Pillow>=10.2.0
+tkinterdnd2>=0.3.0
+pyinstaller>=6.5.0
