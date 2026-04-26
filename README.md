@@ -53,6 +53,40 @@ pyinstaller build_windows.spec
 
 O executável será gerado em `dist/MusicAutoManager.exe`.
 
+## Build de instalador profissional (Windows)
+
+Para instalar em `C:\Program Files\Music Auto Manager` e criar atalho no desktop,
+gere um instalador com Inno Setup.
+
+### Pré-requisito
+
+Instale o Inno Setup 6:
+
+- https://jrsoftware.org/isdl.php
+
+### Gerar instalador (recomendado)
+
+```bat
+build_installer.bat
+```
+
+Saída:
+
+- `dist/MusicAutoManager-Setup.exe`
+
+Esse instalador:
+
+- instala em `C:\Program Files\Music Auto Manager`
+- cria atalho no menu iniciar
+- oferece opção de criar atalho na área de trabalho
+- adiciona desinstalador
+
+### Script do instalador
+
+- `installer_windows.iss`
+
+Se quiser trocar versão exibida no instalador, ajuste `MyAppVersion` nesse arquivo.
+
 ### Distribuição profissional
 
 O `.exe` gerado no Windows já sai com:
@@ -113,6 +147,8 @@ music_auto_manager/
 ├── requirements.txt
 ├── build_windows.spec
 ├── build.bat
+├── build_installer.bat
+├── installer_windows.iss
 └── README.md
 ```
 

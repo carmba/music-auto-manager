@@ -42,22 +42,9 @@ if exist "ffmpeg_bin\ffmpeg.exe" if exist "ffmpeg_bin\ffprobe.exe" (
     )
 )
 
-REM Build com PyInstaller
-echo [3/4] Compilando com PyInstaller...
-if exist "assets\icon.ico" (
-    pyinstaller build_windows.spec
-) else (
-    echo [AVISO] icon.ico nao encontrado em assets\. Compilando sem icone...
-    pyinstaller --onefile --windowed --name MusicAutoManager ^
-        --add-data "assets;assets" ^
-        --add-binary "ffmpeg_bin\ffmpeg.exe;ffmpeg_bin" ^
-        --add-binary "ffmpeg_bin\ffprobe.exe;ffmpeg_bin" ^
-        --hidden-import customtkinter ^
-        --hidden-import tkinterdnd2 ^
-        --hidden-import yt_dlp ^
-        --hidden-import PIL._tkinter_finder ^
-        main.py
-)
+REM Build com PyInstaller (onedir via spec)
+echo [3/5] Compilando com PyInstaller...
+pyinstaller build_windows.spec
 
 if %ERRORLEVEL% neq 0 (
     echo [ERRO] Falha na compilacao.
@@ -65,8 +52,25 @@ if %ERRORLEVEL% neq 0 (
     exit /b 1
 )
 
-echo [4/4] Build concluido!
+echo [4/5] Validando saida...
+if not exist "dist\MusicAutoManager\MusicAutoManager.exe" (
+    echo [ERRO] dist\MusicAutoManager\MusicAutoManager.exe nao encontrado.
+    pause
+    exit /b 1
+)
+if not exist "dist\MusicAutoManager\ffmpeg_bin\ffmpeg.exe" (
+    echo [ERRO] ffmpeg.exe nao foi empacotado em dist\MusicAutoManager\ffmpeg_bin.
+    pause
+    exit /b 1
+)
+if not exist "dist\MusicAutoManager\ffmpeg_bin\ffprobe.exe" (
+    echo [ERRO] ffprobe.exe nao foi empacotado em dist\MusicAutoManager\ffmpeg_bin.
+    pause
+    exit /b 1
+)
+
+echo [5/5] Build concluido!
 echo.
-echo O executavel esta em: dist\MusicAutoManager.exe
+echo Saida principal: dist\MusicAutoManager\MusicAutoManager.exe
 echo.
 pause
