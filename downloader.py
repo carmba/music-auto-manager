@@ -129,6 +129,7 @@ class DownloadEngine:
         if ffmpeg_path and ffprobe_path:
             self._ffmpeg_path = shutil.which(ffmpeg_path) or ffmpeg_path
             self._ffprobe_path = shutil.which(ffprobe_path) or ffprobe_path
+            self._inject_ffmpeg_into_path()
             self._log(f"FFmpeg: {self._ffmpeg_path}")
             self._log(f"FFprobe: {self._ffprobe_path}")
             return
@@ -139,12 +140,25 @@ class DownloadEngine:
             self._ffmpeg_path = get_ffmpeg_path()
             self._ffprobe_path = get_ffprobe_path()
             if self._ffmpeg_path and self._ffprobe_path:
+                self._inject_ffmpeg_into_path()
                 self._log(f"FFmpeg instalado: {self._ffmpeg_path}")
                 self._log(f"FFprobe instalado: {self._ffprobe_path}")
             else:
                 self._log("AVISO: FFmpeg/FFprobe não disponíveis após instalação automática.")
         else:
             self._log("AVISO: FFmpeg/FFprobe não disponíveis — conversão MP3 pode falhar.")
+
+    def _inject_ffmpeg_into_path(self):
+        """Adiciona a pasta de ffmpeg/ffprobe ao PATH do processo atual."""
+        ffmpeg_dir = self._ffmpeg_location_dir()
+        if not ffmpeg_dir:
+            return
+
+        current_path = os.environ.get("PATH", "")
+        path_parts = current_path.split(os.pathsep) if current_path else []
+        normalized = [p.lower() for p in path_parts]
+        if ffmpeg_dir.lower() not in normalized:
+            os.environ["PATH"] = ffmpeg_dir + os.pathsep + current_path if current_path else ffmpeg_dir
 
     def _ffmpeg_location_dir(self) -> Optional[str]:
         """Retorna diretório adequado para ffmpeg_location contendo ffmpeg+ffprobe."""
