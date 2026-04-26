@@ -156,17 +156,20 @@ def get_ffmpeg_dir() -> Path:
 
 def _find_local_binary(candidates: list[str]) -> str | None:
     """Procura executável no diretório bundled e ao lado do .exe quando frozen."""
-    local_dir = get_ffmpeg_dir()
-
-    for name in candidates:
-        path = local_dir / name
-        if path.exists():
-            return str(path)
+    search_dirs = [get_ffmpeg_dir()]
 
     if getattr(sys, 'frozen', False):
-        exe_dir = Path(sys.executable).parent / "ffmpeg_bin"
+        exe_base = Path(sys.executable).parent
+        search_dirs.extend(
+            [
+                exe_base / "ffmpeg_bin",
+                exe_base / "_internal" / "ffmpeg_bin",
+            ]
+        )
+
+    for base_dir in search_dirs:
         for name in candidates:
-            path = exe_dir / name
+            path = base_dir / name
             if path.exists():
                 return str(path)
 

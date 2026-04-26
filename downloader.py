@@ -780,11 +780,13 @@ class DownloadEngine:
             cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True,
+            text=False,
             env=env,
         )
         if result.returncode != 0 or not output_file.exists():
-            error_output = (result.stderr or result.stdout or "Erro desconhecido do ffmpeg").strip()
+            stderr_text = (result.stderr or b"").decode("utf-8", errors="replace")
+            stdout_text = (result.stdout or b"").decode("utf-8", errors="replace")
+            error_output = (stderr_text or stdout_text or "Erro desconhecido do ffmpeg").strip()
             raise RuntimeError(f"Falha ao converter para MP3: {error_output[:500]}")
 
     # -----------------------------------------------------------------------
