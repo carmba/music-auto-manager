@@ -746,6 +746,10 @@ class DownloadEngine:
             "fragment_retries": 3,
             "socket_timeout": 30,
             "extract_flat": "in_playlist" if extract_flat else False,
+            # Streams HLS/m3u8 funcionam melhor via ffmpeg; evita erros do tipo
+            # "m3u download detected" quando o downloader nativo entra em ação.
+            "hls_prefer_native": False,
+            "external_downloader": "ffmpeg",
         }
 
         if ffmpeg_loc:
