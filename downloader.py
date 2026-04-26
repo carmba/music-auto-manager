@@ -31,6 +31,7 @@ from utils import (
     format_speed,
     format_eta,
     get_ffmpeg_path,
+    get_ffprobe_path,
     download_ffmpeg,
 )
 
@@ -112,6 +113,7 @@ class DownloadEngine:
 
         # Verificar / baixar FFmpeg
         self._ffmpeg_path: Optional[str] = None
+        self._ffprobe_path: Optional[str] = None
         self._artist_dir_cache: dict[str, Path] = {}
         self._ensure_ffmpeg()
 
@@ -120,21 +122,56 @@ class DownloadEngine:
     # -----------------------------------------------------------------------
 
     def _ensure_ffmpeg(self):
-        """Garante que o FFmpeg esteja disponível, baixando-o se necessário."""
-        path = get_ffmpeg_path()
-        if path:
-            # Resolver sempre para caminho absoluto
-            abs_path = shutil.which(path) or path
-            self._ffmpeg_path = abs_path
-            self._log(f"FFmpeg: {abs_path}")
-        else:
-            self._log("FFmpeg não encontrado. Iniciando download automático...")
-            success = download_ffmpeg(progress_callback=self._log)
-            if success:
-                self._ffmpeg_path = get_ffmpeg_path()
+        """Garante que ffmpeg e ffprobe estejam disponíveis para conversão."""
+        ffmpeg_path = get_ffmpeg_path()
+        ffprobe_path = get_ffprobe_path()
+
+        if ffmpeg_path and ffprobe_path:
+            self._ffmpeg_path = shutil.which(ffmpeg_path) or ffmpeg_path
+            self._ffprobe_path = shutil.which(ffprobe_path) or ffprobe_path
+            self._log(f"FFmpeg: {self._ffmpeg_path}")
+            self._log(f"FFprobe: {self._ffprobe_path}")
+            return
+
+        self._log("FFmpeg/FFprobe não encontrados. Iniciando download automático...")
+        success = download_ffmpeg(progress_callback=self._log)
+        if success:
+            self._ffmpeg_path = get_ffmpeg_path()
+            self._ffprobe_path = get_ffprobe_path()
+            if self._ffmpeg_path and self._ffprobe_path:
                 self._log(f"FFmpeg instalado: {self._ffmpeg_path}")
+                self._log(f"FFprobe instalado: {self._ffprobe_path}")
             else:
-                self._log("AVISO: FFmpeg não disponível — conversão MP3 pode falhar.")
+                self._log("AVISO: FFmpeg/FFprobe não disponíveis após instalação automática.")
+        else:
+            self._log("AVISO: FFmpeg/FFprobe não disponíveis — conversão MP3 pode falhar.")
+
+    def _ffmpeg_location_dir(self) -> Optional[str]:
+        """Retorna diretório adequado para ffmpeg_location contendo ffmpeg+ffprobe."""
+        candidates: list[Path] = []
+
+        if self._ffmpeg_path:
+            candidates.append(Path(self._ffmpeg_path).parent)
+        if self._ffprobe_path:
+            candidates.append(Path(self._ffprobe_path).parent)
+
+        # Resolver caminhos relativos vindos de PATH (ex: "ffmpeg", "ffprobe")
+        resolved_ffmpeg = shutil.which("ffmpeg") if self._ffmpeg_path and Path(self._ffmpeg_path).parent == Path(".") else None
+        resolved_ffprobe = shutil.which("ffprobe") if self._ffprobe_path and Path(self._ffprobe_path).parent == Path(".") else None
+        if resolved_ffmpeg:
+            candidates.append(Path(resolved_ffmpeg).parent)
+        if resolved_ffprobe:
+            candidates.append(Path(resolved_ffprobe).parent)
+
+        for d in candidates:
+            ffmpeg_ok = (d / "ffmpeg").exists() or (d / "ffmpeg.exe").exists()
+            ffprobe_ok = (d / "ffprobe").exists() or (d / "ffprobe.exe").exists()
+            if ffmpeg_ok and ffprobe_ok:
+                return str(d)
+
+        if self._ffmpeg_path:
+            return str(Path(self._ffmpeg_path).parent)
+        return None
 
     # -----------------------------------------------------------------------
     # Gerenciamento de itens
@@ -287,10 +324,10 @@ class DownloadEngine:
         try:
             self._paused.wait()  # Respeitar pause
 
-            # Sem FFmpeg não há conversão para MP3: falhar rápido para não ficar preso em "Convertendo".
-            if not self._ffmpeg_path:
+            # Sem ffmpeg/ffprobe não há conversão para MP3.
+            if not self._ffmpeg_path or not self._ffprobe_path:
                 raise RuntimeError(
-                    "FFmpeg não encontrado. Instale com: brew install ffmpeg "
+                    "FFmpeg/FFprobe não encontrados. Instale com: brew install ffmpeg "
                     "(macOS) ou inclua ffmpeg.exe no build do Windows."
                 )
 
@@ -306,11 +343,7 @@ class DownloadEngine:
             output_dir = Path(settings.output_folder)
             output_dir.mkdir(parents=True, exist_ok=True)
 
-            # ffmpeg_location deve ser o DIRETÓRIO do executável (caminho absoluto)
-            ffmpeg_loc = str(Path(self._ffmpeg_path).parent) if self._ffmpeg_path else None
-            if ffmpeg_loc == ".":
-                resolved = shutil.which("ffmpeg")
-                ffmpeg_loc = str(Path(resolved).parent) if resolved else None
+            ffmpeg_loc = self._ffmpeg_location_dir()
 
             # Extrair metadados com retry automático para erros de certificado no macOS.
             info, ssl_compat_mode = self._extract_info_with_fallback(item, output_dir, ffmpeg_loc)
@@ -363,9 +396,9 @@ class DownloadEngine:
 
         except Exception as e:
             error_str = str(e)
-            if "ffmpeg" in error_str.lower() and "not found" in error_str.lower():
+            if ("ffmpeg" in error_str.lower() or "ffprobe" in error_str.lower()) and "not found" in error_str.lower():
                 error_str = (
-                    "FFmpeg não encontrado. No macOS instale com: brew install ffmpeg"
+                    "FFmpeg/FFprobe não encontrados. No macOS instale com: brew install ffmpeg"
                 )
             item.status = DownloadStatus.ERROR
             item.error_msg = error_str[:500]

@@ -154,30 +154,39 @@ def get_ffmpeg_dir() -> Path:
     return get_runtime_base_dir() / "ffmpeg_bin"
 
 
-def get_ffmpeg_path() -> str | None:
-    """
-    Retorna o caminho do executável ffmpeg, ou None se não encontrado.
-    Verifica primeiro no diretório local, depois no PATH do sistema.
-    """
+def _find_local_binary(candidates: list[str]) -> str | None:
+    """Procura executável no diretório bundled e ao lado do .exe quando frozen."""
     local_dir = get_ffmpeg_dir()
-    system = platform.system()
 
-    # Nomes possíveis do executável
-    candidates = ["ffmpeg.exe", "ffmpeg"] if system == "Windows" else ["ffmpeg"]
-
-    # 1) Verificar no diretório bundled/local
     for name in candidates:
         path = local_dir / name
         if path.exists():
             return str(path)
 
-    # 1.1) Em executável frozen, também verificar ao lado do .exe
     if getattr(sys, 'frozen', False):
         exe_dir = Path(sys.executable).parent / "ffmpeg_bin"
         for name in candidates:
             path = exe_dir / name
             if path.exists():
                 return str(path)
+
+    return None
+
+
+def get_ffmpeg_path() -> str | None:
+    """
+    Retorna o caminho do executável ffmpeg, ou None se não encontrado.
+    Verifica primeiro no diretório local, depois no PATH do sistema.
+    """
+    system = platform.system()
+
+    # Nomes possíveis do executável
+    candidates = ["ffmpeg.exe", "ffmpeg"] if system == "Windows" else ["ffmpeg"]
+
+    # 1) Verificar no diretório bundled/local
+    local_match = _find_local_binary(candidates)
+    if local_match:
+        return local_match
 
     # 2) Verificar no PATH do sistema
     try:
@@ -189,6 +198,33 @@ def get_ffmpeg_path() -> str | None:
         )
         if result.returncode == 0:
             return "ffmpeg"
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    return None
+
+
+def get_ffprobe_path() -> str | None:
+    """
+    Retorna o caminho do executável ffprobe, ou None se não encontrado.
+    Verifica primeiro no diretório local, depois no PATH do sistema.
+    """
+    system = platform.system()
+    candidates = ["ffprobe.exe", "ffprobe"] if system == "Windows" else ["ffprobe"]
+
+    local_match = _find_local_binary(candidates)
+    if local_match:
+        return local_match
+
+    try:
+        result = subprocess.run(
+            ["ffprobe", "-version"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            timeout=5,
+        )
+        if result.returncode == 0:
+            return "ffprobe"
     except (FileNotFoundError, subprocess.TimeoutExpired):
         pass
 
