@@ -1,27 +1,32 @@
-; build_windows.spec — Spec do PyInstaller para Music Auto Manager
-; Usar no Windows com: pyinstaller build_windows.spec
+"""build_windows.spec - Spec do PyInstaller para Music Auto Manager.
+Usar no Windows com: pyinstaller build_windows.spec
+"""
+
+from pathlib import Path
+
 
 block_cipher = None
+icon_path = "assets/icon.ico" if Path("assets/icon.ico").exists() else None
 
 a = Analysis(
-    ['main.py'],
-    pathex=['.'],
+    ["main.py"],
+    pathex=["."],
     binaries=[
-        # Incluir binários do FFmpeg se presentes localmente
-        ('ffmpeg_bin/*.exe', 'ffmpeg_bin'),
+        # Inclui ffmpeg.exe e ffprobe.exe quando presentes na pasta local.
+        ("ffmpeg_bin/*.exe", "ffmpeg_bin"),
     ],
     datas=[
-        ('assets/*', 'assets'),
-        ('settings.json', '.'),
+        ("assets/*", "assets"),
+        ("settings.json", "."),
     ],
     hiddenimports=[
-        'customtkinter',
-        'tkinterdnd2',
-        'PIL._tkinter_finder',
-        'yt_dlp',
-        'yt_dlp.extractor',
-        'yt_dlp.downloader',
-        'yt_dlp.postprocessor',
+        "customtkinter",
+        "tkinterdnd2",
+        "PIL._tkinter_finder",
+        "yt_dlp",
+        "yt_dlp.extractor",
+        "yt_dlp.downloader",
+        "yt_dlp.postprocessor",
     ],
     hookspath=[],
     hooksconfig={},
@@ -42,18 +47,18 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='MusicAutoManager',
+    name="MusicAutoManager",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,          # Sem janela de terminal
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='assets/icon.ico',  # Coloque icon.ico na pasta assets/
+    icon=icon_path,
 )
