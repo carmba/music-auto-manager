@@ -7,6 +7,7 @@ Executa downloads em thread-pool sem travar a interface.
 import os
 import re
 import shutil
+import subprocess
 import time
 import logging
 import threading
@@ -576,13 +577,17 @@ class DownloadEngine:
                 return
             raise
 
-        # Renomear para o nome sanitizado se necessário
-        # yt-dlp usa o título do vídeo que pode ter caracteres especiais
         downloaded = self._find_downloaded_file(artist_dir, raw_title, safe_track)
 
         if downloaded and downloaded.exists():
-            if str(downloaded) != str(expected_file):
+            if downloaded.suffix.lower() != ".mp3":
+                item.status = DownloadStatus.CONVERTING
+                self._notify(item)
+                self._convert_to_mp3(downloaded, expected_file, item.quality or settings.quality)
+                downloaded.unlink(missing_ok=True)
+            elif str(downloaded) != str(expected_file):
                 downloaded.rename(expected_file)
+
             item.filepath = str(expected_file)
 
             # Verificação de hash
@@ -704,6 +709,46 @@ class DownloadEngine:
 
         return None
 
+    def _convert_to_mp3(self, source_file: Path, output_file: Path, quality: str):
+        """Converte o arquivo baixado para MP3 usando ffmpeg diretamente."""
+        if not self._ffmpeg_path:
+            raise RuntimeError("FFmpeg não encontrado para conversão.")
+
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+
+        ffmpeg_exe = self._ffmpeg_path
+        if ffmpeg_exe in ("ffmpeg", "ffmpeg.exe"):
+            ffmpeg_exe = shutil.which("ffmpeg") or ffmpeg_exe
+
+        cmd = [
+            ffmpeg_exe,
+            "-y",
+            "-i",
+            str(source_file),
+            "-vn",
+            "-codec:a",
+            "libmp3lame",
+            "-b:a",
+            f"{quality}k",
+            str(output_file),
+        ]
+
+        env = os.environ.copy()
+        ffmpeg_dir = self._ffmpeg_location_dir()
+        if ffmpeg_dir:
+            env["PATH"] = ffmpeg_dir + os.pathsep + env.get("PATH", "")
+
+        result = subprocess.run(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            env=env,
+        )
+        if result.returncode != 0 or not output_file.exists():
+            error_output = (result.stderr or result.stdout or "Erro desconhecido do ffmpeg").strip()
+            raise RuntimeError(f"Falha ao converter para MP3: {error_output[:500]}")
+
     # -----------------------------------------------------------------------
     # Opções do yt-dlp
     # -----------------------------------------------------------------------
@@ -718,25 +763,12 @@ class DownloadEngine:
         extract_flat: bool = False,
     ) -> dict:
         """Constrói o dicionário de opções do yt-dlp."""
-        quality = item.quality or settings.quality
-
-        postprocessors = [
-            {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": quality,
-            }
-        ]
-
-        if settings.download_thumbnail:
-            postprocessors.append({"key": "EmbedThumbnail"})
-            postprocessors.append({"key": "FFmpegMetadata", "add_metadata": True})
-
         opts = {
             "format": "bestaudio/best",
             "outtmpl": str(output_dir / "%(uploader)s - %(title)s.%(ext)s"),
-            "postprocessors": postprocessors,
-            "writethumbnail": settings.download_thumbnail,
+            # A conversão para MP3 é feita manualmente pelo app após o download.
+            # Isso evita dependência do postprocess interno do yt-dlp/ffprobe.
+            "writethumbnail": False,
             "quiet": True,
             "no_warnings": False,
             "noplaylist": False,   # Aceitar playlists
