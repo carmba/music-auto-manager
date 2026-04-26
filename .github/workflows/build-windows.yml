@@ -27,10 +27,34 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build EXE
-        shell: cmd
+      - name: Install FFmpeg
+        shell: pwsh
         run: |
-          call build.bat
+          choco install ffmpeg -y
+
+      - name: Prepare bundled FFmpeg
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path ffmpeg_bin | Out-Null
+          $ffmpeg = (Get-Command ffmpeg).Source
+          $ffprobe = (Get-Command ffprobe).Source
+          Copy-Item $ffmpeg "ffmpeg_bin/ffmpeg.exe" -Force
+          Copy-Item $ffprobe "ffmpeg_bin/ffprobe.exe" -Force
+          Get-ChildItem ffmpeg_bin
+
+      - name: Build EXE (PyInstaller)
+        shell: pwsh
+        run: |
+          pyinstaller build_windows.spec
+
+      - name: Verify build output
+        shell: pwsh
+        run: |
+          Get-ChildItem dist
+          if (!(Test-Path "dist/MusicAutoManager.exe")) {
+            Write-Error "dist/MusicAutoManager.exe nao foi gerado"
+            exit 1
+          }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
