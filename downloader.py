@@ -568,19 +568,6 @@ class DownloadEngine:
         item.status = DownloadStatus.DOWNLOADING
         self._notify(item)
 
-    @staticmethod
-    def _is_hls_entry(entry: dict) -> bool:
-        """Retorna True para entradas HLS/m3u8."""
-        protocol = str(entry.get("protocol") or "").lower()
-        manifest = str(entry.get("manifest_url") or "").lower()
-        url = str(entry.get("url") or "").lower()
-        webpage = str(entry.get("webpage_url") or "").lower()
-
-        markers = ("m3u8", "hls")
-        return any(m in protocol for m in markers) or any(
-            m in source for source in (manifest, url, webpage) for m in markers
-        )
-
         target_url = self._entry_download_url(entry, item.url)
         try:
             with yt_dlp.YoutubeDL(ydl_opts_entry) as ydl2:
@@ -632,6 +619,19 @@ class DownloadEngine:
             self._log(f"[ERRO] {raw_title} — arquivo não encontrado após download")
 
         self._notify(item)
+
+    @staticmethod
+    def _is_hls_entry(entry: dict) -> bool:
+        """Retorna True para entradas HLS/m3u8."""
+        protocol = str(entry.get("protocol") or "").lower()
+        manifest = str(entry.get("manifest_url") or "").lower()
+        url = str(entry.get("url") or "").lower()
+        webpage = str(entry.get("webpage_url") or "").lower()
+
+        markers = ("m3u8", "hls")
+        return any(m in protocol for m in markers) or any(
+            m in source for source in (manifest, url, webpage) for m in markers
+        )
 
     def _resolve_artist_dir(self, output_dir: Path, artist_name: str) -> Path:
         """
