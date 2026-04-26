@@ -722,7 +722,17 @@ class DownloadEngine:
             return recent
 
         # Último recurso: qualquer arquivo de áudio na pasta (sem limite de tempo)
-        for ext in ("*.mp3", "*.m4a", "*.webm", "*.ogg"):
+        for ext in (
+            "*.mp3",
+            "*.m4a",
+            "*.webm",
+            "*.ogg",
+            "*.opus",
+            "*.aac",
+            "*.wav",
+            "*.flac",
+            "*.mp4",
+        ):
             for f in artist_dir.glob(ext):
                 return f
 
