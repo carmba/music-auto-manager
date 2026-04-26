@@ -55,11 +55,31 @@ jobs:
             Write-Error "dist/MusicAutoManager/MusicAutoManager.exe nao foi gerado"
             exit 1
           }
-          if (!(Test-Path "dist/MusicAutoManager/ffmpeg_bin/ffmpeg.exe")) {
+
+          # PyInstaller 6 pode colocar binarios em _internal/ no onedir.
+          $ffmpegCandidates = @(
+            "dist/MusicAutoManager/ffmpeg_bin/ffmpeg.exe",
+            "dist/MusicAutoManager/_internal/ffmpeg_bin/ffmpeg.exe"
+          )
+          $ffprobeCandidates = @(
+            "dist/MusicAutoManager/ffmpeg_bin/ffprobe.exe",
+            "dist/MusicAutoManager/_internal/ffmpeg_bin/ffprobe.exe"
+          )
+
+          $hasFfmpeg = $false
+          foreach ($p in $ffmpegCandidates) {
+            if (Test-Path $p) { $hasFfmpeg = $true; break }
+          }
+          if (-not $hasFfmpeg) {
             Write-Error "ffmpeg.exe nao encontrado no pacote final"
             exit 1
           }
-          if (!(Test-Path "dist/MusicAutoManager/ffmpeg_bin/ffprobe.exe")) {
+
+          $hasFfprobe = $false
+          foreach ($p in $ffprobeCandidates) {
+            if (Test-Path $p) { $hasFfprobe = $true; break }
+          }
+          if (-not $hasFfprobe) {
             Write-Error "ffprobe.exe nao encontrado no pacote final"
             exit 1
           }
